@@ -20,8 +20,9 @@ npm install
 npm run dev
 ```
 
-Após execução do projeto, este é o resultado esperado no navegador:
+Após execução do projeto, este é o resultado esperado no navegador: 
 
+![Image](https://github.com/user-attachments/assets/0963ac34-f53f-4d1b-859f-25e6a7ba09d1)
 
 ## Introdução
 
