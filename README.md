@@ -29,6 +29,8 @@ npm start
 Para executar este projeto:
 
 1. Acesse o diretório do frontend:
+
+
 ```
 cd Gabriel-de-Carvalho-Silva-PUC/Gabriel-de-Carvalho-Silva-Fase-2
 ```
