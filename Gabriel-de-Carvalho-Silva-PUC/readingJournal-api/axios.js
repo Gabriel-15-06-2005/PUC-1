@@ -20,7 +20,7 @@ export const addBook = async (book) => {
 };
 
 export const updateBook = async (book) => {
-  const response = await api.put("/books", book);
+  const response = await api.put(`/books/${book.id}`, book); // Corrigido para incluir o ID na URL
   return response.data;
 };
 

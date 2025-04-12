@@ -14,15 +14,21 @@ exports.getAllBooks = async (req, res) => {
 exports.getBookById = async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
-    if (!book) return res.status(404).json({ error: "Livro não encontrado" });
+    if (!book) {
+      return res.status(404).json({ error: "Livro não encontrado com o ID fornecido." });
+    }
     res.json(book);
   } catch (error) {
-    res.status(500).json({ error: "Erro ao buscar livro" });
+    res.status(500).json({ error: "Erro interno ao buscar o livro." });
   }
 };
 
 // Criar novo livro
 exports.createBook = async (req, res) => {
+  const { title, author, genre, readAt } = req.body;
+  if (!title || !author || !genre || !readAt) {
+    return res.status(400).json({ error: "Todos os campos são obrigatórios" });
+  }
   try {
     const newBook = new Book(req.body);
     const savedBook = await newBook.save();

@@ -1,10 +1,12 @@
 ## Nome: `Gabriel de Carvalho Silva`
 
+### Backend
+
 Para executar este projeto:
 
-1. Acesse do terminal o diretório:
+1. Acesse o diretório do backend:
 ```
-cd Gabriel-de-Carvalho-Silva-Fase-1-PUC
+cd Gabriel-de-Carvalho-Silva-PUC/readingJournal-api
 ```
 
 2. Execute npm install para instalar as dependências:
@@ -14,7 +16,29 @@ cd Gabriel-de-Carvalho-Silva-Fase-1-PUC
 npm install
 ```
 
-3. E em seguida, npm run dev, para iniciar.
+3. E em seguida, npm start, para iniciar.
+
+```
+npm start
+```
+
+### Frontend
+
+Para executar este projeto:
+
+1. Acesse o diretório do frontend:
+```
+cd Gabriel-de-Carvalho-Silva-PUC/Gabriel-de-Carvalho-Silva-Fase-2
+```
+
+2. Execute npm install para instalar as dependências:
+
+
+```
+npm install
+```
+
+3. E em seguida, npm start, para iniciar.
 
 ```
 npm run dev

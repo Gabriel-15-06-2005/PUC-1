@@ -50,4 +50,12 @@ describe("BookForm Component", () => {
     expect(updateBook).toHaveBeenCalledWith({ id: 1, title: "Livro Editado", author: "Autor Editado" });
     expect(mockOnSave).toHaveBeenCalled();
   });
+
+  it("deve exibir erro se os campos estiverem vazios", async () => {
+    render(<BookForm onSave={jest.fn()} />);
+
+    fireEvent.click(screen.getByText("Adicionar"));
+
+    expect(screen.getByText("Todos os campos são obrigatórios!")).toBeInTheDocument();
+  });
 });

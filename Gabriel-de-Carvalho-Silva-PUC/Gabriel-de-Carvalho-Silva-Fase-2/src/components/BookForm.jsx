@@ -54,7 +54,7 @@ const BookForm = ({ bookToEdit, onSave }) => {
           margin="normal"
         />
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          {bookToEdit ? "Salvar Alterações" : "Adicionar"}
+          {bookToEdit ? "Salvar Alterações" : "Adicionar Livro"}
         </Button>
       </form>
     </Box>

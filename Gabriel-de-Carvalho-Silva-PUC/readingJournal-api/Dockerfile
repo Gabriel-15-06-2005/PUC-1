@@ -14,4 +14,4 @@ RUN npm install
 EXPOSE 5000
 
 # Inicie a aplicação com o comando "node app.js" quando o container for executado
-CMD ["node", "./bin/www"]
+CMD ["node", "./bin/www"] // Já está correto para produção
