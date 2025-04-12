@@ -44,10 +44,6 @@ npm install
 npm run dev
 ```
 
-Após execução do projeto, este é o resultado esperado no navegador: 
-
-![Image](https://github.com/user-attachments/assets/0963ac34-f53f-4d1b-859f-25e6a7ba09d1)
-
 ## Introdução
 
 Esta aplicação React permite gerenciar uma lista de livros, fornecendo funcionalidades básicas como adicionar, listar e excluir livros. O projeto foi desenvolvido utilizando React com React Router para navegação entre as páginas.

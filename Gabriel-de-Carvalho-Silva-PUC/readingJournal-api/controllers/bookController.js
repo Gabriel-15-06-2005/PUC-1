@@ -1,4 +1,4 @@
-const Book = require("../models/Book");
+const Book = require('../models/Book');
 
 // Listar todos os livros
 exports.getAllBooks = async (req, res) => {
