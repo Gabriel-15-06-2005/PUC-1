@@ -27,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 const bookRoutes = require("./routes/books");
 app.use("/books", bookRoutes);
+const externalRouter = require('./routes/external');
 app.use('/external', externalRouter);
 
 // catch 404 and forward to error handler
