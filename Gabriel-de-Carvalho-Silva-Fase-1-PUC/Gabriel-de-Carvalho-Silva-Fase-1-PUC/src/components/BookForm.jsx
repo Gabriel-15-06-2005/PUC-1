@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TextField, Button, Typography, Box } from "@mui/material";
 
 const BookForm = ({ onAdd }) => {
   const [title, setTitle] = useState("");
@@ -18,25 +19,35 @@ const BookForm = ({ onAdd }) => {
   };
 
   return (
-    <div>
-      <h2>Adicionar Livro</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    <Box sx={{ maxWidth: 400, margin: "0 auto", padding: 2 }}>
+      <Typography variant="h4" gutterBottom>
+        Adicionar Livro
+      </Typography>
+      {error && (
+        <Typography color="error" gutterBottom>
+          {error}
+        </Typography>
+      )}
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Título"
+        <TextField
+          fullWidth
+          label="Título"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          margin="normal"
         />
-        <input
-          type="text"
-          placeholder="Autor"
+        <TextField
+          fullWidth
+          label="Autor"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
+          margin="normal"
         />
-        <button type="submit">Adicionar</button>
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Adicionar
+        </Button>
       </form>
-    </div>
+    </Box>
   );
 };
 
