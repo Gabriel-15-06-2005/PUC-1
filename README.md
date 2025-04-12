@@ -5,6 +5,8 @@
 Para executar este projeto:
 
 1. Acesse o diretório do backend:
+
+
 ```
 cd Gabriel-de-Carvalho-Silva-PUC/readingJournal-api
 ```
