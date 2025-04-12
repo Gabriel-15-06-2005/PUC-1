@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 var booksRouter = require('./routes/books');
-var externalRouter = require('./routes/external');
+const externalRouter = require('./routes/external');
 
 var app = express();
 
@@ -25,9 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-const bookRoutes = require("./routes/books");
-app.use("/books", bookRoutes);
-const externalRouter = require('./routes/external');
+app.use('/books', booksRouter);
 app.use('/external', externalRouter);
 
 // catch 404 and forward to error handler
@@ -44,6 +42,16 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+// Middleware de tratamento de erros
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.render('error', {
+    title: 'Erro no Servidor', // Adicione o título aqui
+    message: err.message,
+    error: req.app.get('env') === 'development' ? err : {}, // Mostra detalhes apenas no ambiente de desenvolvimento
+  });
 });
 
 module.exports = app;

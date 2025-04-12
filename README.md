@@ -48,6 +48,7 @@ npm run dev
 
 Esta aplicação React permite gerenciar uma lista de livros, fornecendo funcionalidades básicas como adicionar, listar e excluir livros. O projeto foi desenvolvido utilizando React com React Router para navegação entre as páginas.
 
+
 ## Componentes
 
 - BookList:
@@ -61,6 +62,15 @@ Esta aplicação React permite gerenciar uma lista de livros, fornecendo funcion
 - NavBar:
 
   - Barra de navegação contendo os links para acessar a página inicial (lista de livros) e a página de adição de livros.
+
+
+## Funcionalidades 
+
+- **Cadastro de Livros**: Adicione novos livros com título e autor. 
+- **Listagem de Livros**: Visualize todos os livros cadastrados. 
+- **Edição de Livros**: Edite informações de livros existentes. 
+- **Exclusão de Livros**: Remova livros da lista. 
+
 
 ## Conclusão
 

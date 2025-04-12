@@ -1,4 +1,5 @@
 const Book = require('../models/Book');
+const { body, validationResult } = require("express-validator");
 
 // Listar todos os livros
 exports.getAllBooks = async (req, res) => {
@@ -24,19 +25,24 @@ exports.getBookById = async (req, res) => {
 };
 
 // Criar novo livro
-exports.createBook = async (req, res) => {
-  const { title, author, genre, readAt } = req.body;
-  if (!title || !author || !genre || !readAt) {
-    return res.status(400).json({ error: "Todos os campos são obrigatórios" });
-  }
-  try {
-    const newBook = new Book(req.body);
-    const savedBook = await newBook.save();
-    res.status(201).json(savedBook);
-  } catch (error) {
-    res.status(400).json({ error: "Erro ao criar livro" });
-  }
-};
+exports.createBook = [
+  body("title").notEmpty().withMessage("O título é obrigatório."),
+  body("author").notEmpty().withMessage("O autor é obrigatório."),
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const newBook = new Book(req.body);
+      const savedBook = await newBook.save();
+      res.status(201).json(savedBook);
+    } catch (error) {
+      res.status(400).json({ error: "Erro ao criar livro" });
+    }
+  },
+];
 
 // Atualizar livro
 exports.updateBook = async (req, res) => {
