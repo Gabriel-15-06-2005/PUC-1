@@ -12,9 +12,9 @@ const externalRouter = require('./routes/external');
 
 var app = express();
 
-// view engine setup
+// Configuração do diretório de views
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -44,14 +44,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// Middleware de tratamento de erros
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.render('error', {
-    title: 'Erro no Servidor', // Adicione o título aqui
-    message: err.message,
-    error: req.app.get('env') === 'development' ? err : {}, // Mostra detalhes apenas no ambiente de desenvolvimento
-  });
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
 
 module.exports = app;

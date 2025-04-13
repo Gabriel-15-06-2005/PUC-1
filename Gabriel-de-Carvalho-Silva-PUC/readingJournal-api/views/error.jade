@@ -1,9 +1,0 @@
-doctype html
-html
-  head
-    title= title || 'Erro' // Define um título padrão caso `title` não seja fornecido
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    h1= message || 'Erro desconhecido' // Define uma mensagem padrão
-    h2= error.status || 'Status não definido' // Define um status padrão
-    pre #{error.stack || 'Sem detalhes do erro'} // Define um fallback para a stack
