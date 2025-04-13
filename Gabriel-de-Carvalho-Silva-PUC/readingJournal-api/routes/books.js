@@ -55,7 +55,7 @@ router.delete('/:id', (req, res) => {
     return res.status(404).json({ message: 'Livro não encontrado' });
   }
   books.splice(bookIndex, 1);
-  res.status(204).send(); // Sem conteúdo
+  res.status(204).send();
 });
 
 module.exports = router;
